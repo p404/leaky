@@ -19,3 +19,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GHCR_TOKEN }}
+
+      - name: Build and Push the Image to GHCR
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest .
+          docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
