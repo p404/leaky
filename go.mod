@@ -1,0 +1,3 @@
+module leaky
+
+go 1.21.0
